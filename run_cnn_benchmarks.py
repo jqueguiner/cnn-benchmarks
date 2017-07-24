@@ -30,7 +30,7 @@ def main(args):
     'use_cudnn': [int(c) for c in args.use_cudnns.split(',')],
   } 
   
-  output_dir=args.output_dir
+  output_dir = args.output_dir
   if not os.path.exists(output_dir):
     os.makedirs(output_dir)
     
