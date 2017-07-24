@@ -29,7 +29,11 @@ def main(args):
     'batch_size': [int(b) for b in args.batch_sizes.split(',')],
     'use_cudnn': [int(c) for c in args.use_cudnns.split(',')],
   } 
-
+  
+  output_dir=args.output_dir
+  if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+    
   base_command = 'th cnn_benchmark.lua'
 
   output_jsons = set()
